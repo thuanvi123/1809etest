@@ -11,6 +11,9 @@
         <label>Gigabyte :</label>
         <input type="text" name="capacity" value="" placeholder="Nhập vào dung lượng cần chuyển từ gigabyte">
     </P>
+    <P>
+        <input type="submit" name="submit" value="submit">
+    </P>
 </form>
 
 <?php
