@@ -9,7 +9,13 @@
 <form name="convertdungluong" action="" method="post">
     <P>
         <label>Gigabyte :</label>
-        <input type="text" name="capacity" value="" placeholder="Nhập vào dung lượng cần chuyển từ gigabyte">
+        <input type="text" name="capacity" value="<?php
+        if (isset($_REQUEST['capacity'])){
+            echo $_REQUEST['capacity'];
+        }else{
+            echo '';
+        }
+        ?>" placeholder="Nhập vào dung lượng cần chuyển từ gigabyte">
     </P>
     <P>
         <input type="submit" name="submit" value="submit">
@@ -27,7 +33,15 @@
 echo '<pre>';
 print_r($_REQUEST);
 echo '</pre>';
+if (isset($_REQUEST['capacity'])) {
+    echo 'megabyte:' . $val = $_REQUEST['capacity'] * 1024;
+    echo '<br>';
+    echo 'byte:' . $val = $_REQUEST['capacity'] * 1024 * 1024;
+    echo '<br>';
+    echo 'bit:' . $val = $_REQUEST['capacity'] * 1024 * 1024 * 1024;
+}else{
+    echo 'ERROR';
+}
 ?>
-
 </body>
 </html>
